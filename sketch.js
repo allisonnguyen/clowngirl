@@ -46,10 +46,13 @@ function windowResized() {
 }
 
 function mousePressed() {
-  myStar = new Star(0, 0, 20, 70, 40, 8, 2);
-  starX = mouseX;
-  starY = mouseY;
-  showStar = true;
+  if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
 
-  myCircle = new Circle(0, 0, 100, 4);
+    myStar = new Star(0, 0, 20, 70, 40, 8, 2);
+    starX = mouseX;
+    starY = mouseY;
+    showStar = true;
+
+    myCircle = new Circle(0, 0, 100, 4);
+  }
 }
