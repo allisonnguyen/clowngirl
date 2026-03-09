@@ -43,5 +43,5 @@ function mouseClicked() {
   starY = mouseY;
   showStar = true;
 
-  myCircle = new Circle(0, 0, 100, 3);
+  myCircle = new Circle(0, 0, 100, 4);
 }
