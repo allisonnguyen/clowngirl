@@ -7,8 +7,15 @@ let starY;
 
 let myCircle;
 
+
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let holder = document.getElementById("sketch-holder");
+  // holder.offsetWidth reads rendered width of the div
+  // canvas resizes with the container
+  canvas = createCanvas(holder.offsetWidth, holder.offsetWidth * 0.7);
+  canvas.parent("sketch-holder");
+
   system = new ParticleSystem(1, 25);
 }
 
@@ -34,10 +41,11 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  let holder = document.getElementById("sketch-holder");
+  resizeCanvas(holder.offsetWidth, holder.offsetWidth * 0.7);
 }
 
-function mouseClicked() {
+function mousePressed() {
   myStar = new Star(0, 0, 20, 70, 40, 8, 2);
   starX = mouseX;
   starY = mouseY;
