@@ -1,0 +1,180 @@
+@import url("https://use.typekit.net/sln7fjs.css");
+@import url("https://use.typekit.net/sln7fjs.css");
+
+
+/* ===============================
+   GLOBAL
+================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+body {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  min-height: 100vh;
+
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+
+/* ===============================
+   DESKTOP NAV (SIDEBAR)
+================================= */
+
+nav {
+  display: flex;
+  justify-content: left;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  background-color: #caac77;
+}
+
+/* Nav list items */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+nav li + li {
+  margin-bottom: 0.5rem; /* Applies 0.5rem space only between items */
+}
+
+.nav-title {
+  padding-bottom: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  opacity: 100%;
+
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Nav links */
+nav a {
+  display: block;
+  position: relative;
+
+  text-decoration: none;
+  font-family: "libra-mn", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+  color: #1D0200;
+  opacity: 60%;
+
+  padding: 8px 8px 8px clamp(1.5rem, 3vw, 4rem);
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: white;
+  opacity: 1;
+}
+
+nav a.active {
+  opacity: 1;
+}
+
+/* ===============================
+   MAIN CONTENT
+================================= */
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f1e2be;
+}
+
+.content-wrapper {
+  width: 90%;
+}
+
+h1 {
+  font-family: "libra-mn", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3rem;
+  margin-top: 60px;
+}
+
+h2 {
+  font-family: "libra-mn", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, p {
+  color: #1D0200;
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+
+/* ===============================
+   MOBILE BREAKPOINT
+================================= */
+
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  /* Mobile navigation */
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  .nav-title {
+    display: none; /* hide big title on mobile */
+  }
+
+  nav a {
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    white-space: normal;
+    transform: none;
+  }
+
+  .main-content {
+    padding-bottom: 120px; /* prevent overlap */
+  }
+}
